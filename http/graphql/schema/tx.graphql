@@ -1,0 +1,96 @@
+type Transaction {
+  id: ID!
+  savings_id: ID!
+  product_id: ID!
+  customer_id: Int!
+  "initiator"
+  user_id: Int!
+
+  type: ETransactionType!
+  reference: String!
+  currency: ECurrency!
+  gateway: EPaymentGateway!
+  method: EPaymentMethod!
+  paid: Boolean!
+  paid_at: Time
+  failed: Boolean!
+  failed_at: Time
+  cancelled: Boolean!
+  cancelled_at: Time
+  #   checksum: String! (not needed on the client)
+
+  payment_link: String
+
+  initial_config: Map
+  final_config: Map
+
+  history: [History]
+
+  invoice: [Item]
+
+  savings_amount: Float!
+
+  amount: Float!
+
+  pre_balance: Float!
+  post_balance: Float!
+
+  remark: String
+
+  created_at: Time
+  updated_at: Time
+}
+
+type Item {
+  key: String!
+  name: String!
+  amount: Float!
+  quantity: Int!
+  metadata: String
+}
+
+input TransactionFilterInput {
+  transaction_id: ID
+  savings_id: ID
+  user_id: Int
+  product_id: ID
+  "organization id"
+  customer_id: Int
+  type: ETransactionType
+  reference: String
+  currency: ECurrency
+  gateway: EPaymentGateway
+  method: EPaymentMethod
+  paid: Boolean
+  failed: Boolean
+  cancelled: Boolean
+
+  "searches by remark, reference, transaction_id"
+  search: String
+
+  limit: Int
+  page: Int
+  sort: ESort
+  "when true, returns page count and related info (try not to set to true always)"
+  paginate: Boolean
+
+  # savings_amount: Float
+  # duration: Int
+  #   created_at: Time
+  #   updated_at: Time
+}
+
+input WebhookInput {
+  tx: Any!
+  provider: EPaymentGateway!
+  reference: String!
+}
+
+input TransactionInput {
+  account_number: String!
+  user_id: Int!
+  date: Time!
+  type: ETransactionType!
+  amount: Float!
+  remark: String
+}
