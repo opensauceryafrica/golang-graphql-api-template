@@ -1,0 +1,9 @@
+extend type Mutation {
+  webhook(input: WebhookInput!): RespondWithTransaction!
+}
+
+extend type Query {
+  "you can filter by TransactionsFilterInput.transaction_id or TransactionsFilterInput.reference"
+  transaction(input: TransactionFilterInput!): RespondWithTransaction!
+  transactions(input: TransactionFilterInput): RespondWithTransactions!
+}
