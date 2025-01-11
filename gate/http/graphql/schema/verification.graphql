@@ -1,0 +1,19 @@
+input EmailVerificationInput {
+  email: String!
+}
+
+input EmailConfirmationInput {
+  email: String!
+  code: String!
+}
+
+input PhoneVerificationInput {
+  phone: String!
+}
+
+input PhoneConfirmationInput {
+  "Phone must be in international format without + (E.g 2348012345678)."
+  phone: String!
+  code: String!
+  reference: String!
+}

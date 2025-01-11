@@ -1,0 +1,79 @@
+enum EStatus {
+  ACTIVE
+  INACTIVE
+  DELETED
+  PENDING
+  COMPLETED
+}
+
+enum EFrequency {
+  DAILY
+  WEEKLY
+  MONTHLY
+  QUARTERLY
+  ANNUALLY
+  ONE_TIME
+  PRO_RATA
+}
+
+enum ETier {
+  zero
+  one
+  two
+}
+
+enum ESort {
+  desc
+  asc
+}
+
+enum ECurrency {
+  NGN
+  USD
+  USDT
+  BTC
+}
+
+enum EWalletType {
+  FIAT
+  CRYPTO
+}
+
+enum ECryptoNetwork {
+  ETHEREUM
+  BITCOIN
+  TRON
+  SOLANA
+}
+
+enum EPaymentMethod {
+  CARD
+  WALLET
+}
+
+enum ETransactionType {
+  FUNDING
+  TRANSFER
+  WITHDRAWAL
+}
+
+enum ERole {
+  ORG
+  USER
+}
+
+enum EUserStatus {
+  USER_LOCKED
+  USER_DELETED
+  USER_ACTIVE
+}
+
+enum EGender {
+  MALE
+  FEMALE
+}
+
+enum ELanguage {
+  EN
+  FR
+}

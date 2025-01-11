@@ -1,0 +1,28 @@
+"the wallet type"
+type Wallet @key(fields: "user_id") {
+  id: ID!
+  user_id: ID!
+  user: User! @external
+  type: EWalletType!
+  name: String!
+  balance: Float!
+  currency: ECurrency!
+  address: [WalletAddress]
+  created_at: Time
+  updated_at: Time
+}
+
+type WalletAddress {
+  address: String!
+  network: ECryptoNetwork!
+}
+
+input WalletFilter {
+  type: EWalletType
+}
+
+input WalletInput {
+  currency: ECurrency!
+  "this is not required and really only added for internal use"
+  code: String
+}

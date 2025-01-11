@@ -1,0 +1,21 @@
+"the security_setting type"
+type SecuritySetting @key(fields: "user_id") {
+  id: ID!
+  user_id: ID!
+  user: User! @external
+  biometric_enabled: Boolean!
+  private_mode: Boolean!
+  allow_screenshot: Boolean!
+  context_menu: Boolean!
+  sms_alert: Boolean!
+  created_at: Time
+  updated_at: Time
+}
+
+input SecuritySettingInput {
+  biometric_enabled: Boolean!
+  private_mode: Boolean!
+  allow_screenshot: Boolean!
+  context_menu: Boolean!
+  sms_alert: Boolean!
+}

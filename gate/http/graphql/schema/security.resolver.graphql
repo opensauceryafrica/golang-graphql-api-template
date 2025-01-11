@@ -1,0 +1,5 @@
+extend type Mutation {
+  modifySecuritySetting(
+    input: SecuritySettingInput!
+  ): RespondWithSecuritySetting
+}

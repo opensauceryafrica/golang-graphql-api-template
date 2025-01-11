@@ -1,0 +1,7 @@
+extend type Mutation {
+  addWallet(input: WalletInput!): RespondWithWallet!
+}
+
+extend type Query {
+  wallets(input: WalletFilter!): RespondWithWallets!
+}

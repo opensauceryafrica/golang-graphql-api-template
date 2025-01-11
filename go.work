@@ -1,3 +1,11 @@
-go 1.18
+go 1.21.0
 
-use .
+use (
+	./auth
+	./bank
+	./chain
+	./connect
+	./garage
+	./gate
+	./signal
+)
