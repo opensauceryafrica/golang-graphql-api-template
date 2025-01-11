@@ -1,10 +1,10 @@
-# cendit
+# golang-graphql-api-template
 
 Crypto backed Banking - better still - KUDA for cryptocurrencies
 
 ## Architecture
 
-Cendit is built on golang's multi-module workspaces setup and implements a service oriented approach for resource sharing and service distribution - `one codebase, one server, multiple services`.
+golang-graphql-api-template is built on golang's multi-module workspaces setup and implements a service oriented approach for resource sharing and service distribution - `one codebase, one server, multiple services`.
 
 Who needs a queue when you can just `go build`? Should we need a queue? Then it definitely won't be for cross service communication.
 
